@@ -1,0 +1,58 @@
+Started by user admin
+Obtained Jenkinsfile from git https://github.com/cristianrzc/crear-usuarios-pipeline.git
+[Pipeline] Start of Pipeline
+[Pipeline] node
+Running on Jenkins in /var/lib/jenkins/workspace/crear-usuarios-pipeline
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Declarative: Checkout SCM)
+[Pipeline] checkout
+Selected Git installation does not exist. Using Default
+The recommended git tool is: NONE
+No credentials specified
+ > git rev-parse --resolve-git-dir /var/lib/jenkins/workspace/crear-usuarios-pipeline/.git # timeout=10
+Fetching changes from the remote Git repository
+ > git config remote.origin.url https://github.com/cristianrzc/crear-usuarios-pipeline.git # timeout=10
+Fetching upstream changes from https://github.com/cristianrzc/crear-usuarios-pipeline.git
+ > git --version # timeout=10
+ > git --version # 'git version 2.43.0'
+ > git fetch --tags --force --progress -- https://github.com/cristianrzc/crear-usuarios-pipeline.git +refs/heads/*:refs/remotes/origin/* # timeout=10
+ > git rev-parse refs/remotes/origin/main^{commit} # timeout=10
+Checking out Revision 506557f2c0559a5d8d0a3a105cbb70d5e7a899ac (refs/remotes/origin/main)
+ > git config core.sparsecheckout # timeout=10
+ > git checkout -f 506557f2c0559a5d8d0a3a105cbb70d5e7a899ac # timeout=10
+Commit message: "Eliminacion etapa de clonacion innecesaria del repositorio"
+ > git rev-list --no-walk 3d946a340d40d0a04bb1a9db84e92bf1edd29198 # timeout=10
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] withEnv
+[Pipeline] {
+[Pipeline] stage
+[Pipeline] { (Crear usuario)
+[Pipeline] sh
++ bash crear_usuario.sh jlopez jose lopez finanzas
+useradd: Permission denied.
+useradd: cannot lock /etc/passwd; try again later.
+chpasswd: (user jlopez) pam_chauthtok() failed, error:
+Authentication token manipulation error
+chpasswd: (line 1, user jlopez) password not changed
+chage: Permission denied.
+Usuario creado exitosamente:
+Login: jlopez
+Nombre completo: jose lopez
+Departamento: finanzas
+Contraseña temporal: 9mrT6qteH52Oi7LW
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] stage
+[Pipeline] { (Declarative: Post Actions)
+[Pipeline] echo
+✅ Usuario jlopez creado correctamente.
+[Pipeline] }
+[Pipeline] // stage
+[Pipeline] }
+[Pipeline] // withEnv
+[Pipeline] }
+[Pipeline] // node
+[Pipeline] End of Pipeline
+Finished: SUCCESS
