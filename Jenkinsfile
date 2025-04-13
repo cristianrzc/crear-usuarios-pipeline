@@ -7,13 +7,7 @@ pipeline {
         choice(name: 'DEPARTAMENTO', choices: ['contabilidad', 'finanzas', 'tecnologia'], description: 'Departamento o grupo del usuario')
     }
 
-    stages {
-        stage('Clonar repositorio') {
-            steps {
-                git 'https://github.com/cristianrzc/crear-usuarios-pipeline.git'
-            }
-        }
-
+    stages {         
         stage('Crear usuario') {
             steps {
                 sh 'bash crear_usuario.sh "$LOGIN" "$NOMBRE_COMPLETO" "$DEPARTAMENTO"'
