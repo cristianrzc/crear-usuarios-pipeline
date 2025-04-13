@@ -45,7 +45,7 @@ Este proyecto implementa un pipeline declarativo en Jenkins que permite automati
 | Parámetro        | Descripción                              | Ejemplo       |
 |------------------|------------------------------------------|---------------|
 | `LOGIN`          | Usuario a crear (único)                  | jlopez        |
-| `NOMBRE_COMPLETO`| Nombre y apellido del usuario            | Juan Lopez    |
+| `NOMBRE_COMPLETO`| Nombre y apellido del usuario            | Jose Lopez    |
 | `DEPARTAMENTO`   | Grupo asignado al usuario                | tecnologia    |
 
 3. Hacé clic en **Build**
@@ -63,7 +63,9 @@ Este proyecto implementa un pipeline declarativo en Jenkins que permite automati
 
 ## 📸 Evidencia de uso
 
-Se adjuntan capturas en el repositorio que muestran la ejecución del Job y la salida del pipeline con éxito (opcional si te lo piden como parte de la entrega).
+La salida completa del pipeline se encuentra disponible en el siguiente archivo:
+
+[Console_Output](Console_Output.txt)
 
 ---
 
